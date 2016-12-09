@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<!--
+Anthony Liestyo & Denie Devito 
+Final Project
+Scheduler
+-->
+
+<html>
+<head>
+<script type="text/javascript" src="J,week1.js"></script>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}    
+    
+* {box-sizing:border-box;}
+ul {list-style-type: none;}
+body {font-family: Verdana,sans-serif;}
+
+    
+    
+.month {
+    padding: 70px 25px; 
+    width: 100%;
+    background: #3366ff;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+   
+    
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: block;
+    width: 3%;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size:12px;
+    color: #777;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+    .weekdays li, .days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+    .weekdays li, .days li {width: 12.5%;}
+    .days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+    .weekdays li, .days li {width: 12.2%;}
+}
+</style>
+</head>
+    
+<html>
+    <link rel="stylesheet" href="../style.css" media="screen">
+ <body>
+    <main>
+      <div class="add-note-button-container">
+        <button id="add-note-button">+</button>
+      </div>
+
+    </main>
+
+    <div id="modal-backdrop" class="hidden"></div>
+    <div id="add-note-modal" class="hidden">
+      <div class="modal-dialog">
+
+        <div class="modal-header">
+          <h3><center>Add Something in Your Scheduler!</center></h3>
+          <button type="button" class="modal-close-button">&times;</button>
+        </div>
+
+        <div class="modal-body">
+
+          <div class="todo-input-element">
+            <label for="todo-input-details">To Do </label>
+            <textarea id="todo-input-details"></textarea>
+          </div>
+        </div>
+          
+          <div class="date">
+              <label> Select Time :</label>
+          <select id="time">
+                <option value="0">00:00</option>
+                <option value="1">01:00</option>
+                <option value="2">02:00</option>
+                <option value="3">03:00</option>
+                <option value="4">04:00</option>
+                <option value="5">05:00</option>
+                <option value="6">06:00</option>
+                <option value="7">07:00</option>
+                <option value="8">08:00</option>
+                <option value="9">09:00</option>
+                <option value="10">10:00</option>
+                <option value="11">11:00</option>
+                <option value="12">12:00</option>
+                <option value="13">13:00</option>
+                <option value="14">14:00</option>
+                <option value="15">15:00</option>
+                <option value="16">16:00</option>
+                <option value="17">17:00</option>
+                <option value="18">18:00</option>
+                <option value="19">19:00</option>
+                <option value="20">20:00</option>
+                <option value="21">21:00</option>
+                <option value="22">22:00</option>
+                <option value="23">23:00</option>
+                <option value="24">24:00</option>
+              </select>
+          </div>
+          
+          
+          <div class="day">
+              <label> Select Days :</label>
+          <select id="days">
+                <option value="1">Monday</option>
+                <option value="2">Tuesday</option>
+                <option value="3">Wednesday</option>
+                <option value="4">Thursday</option>
+                <option value="5">Friday</option>
+                <option value="6">Saturday</option>
+                <option value="7">Sunday</option>
+                
+              </select>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="modal-cancel-button">Cancel</button>
+          <button type="button" class="modal-accept-button">Add ToDo</button>
+        </div>
+
+      </div>
+    </div>
+
+  <script src="index.js"></script>
+
+
+
+<center><h1>Scheduler</h1></center>
+
+<div class="month">      
+  <ul>
+    <a class = "prev" href="JanWeek1.html">❮</a>
+    <a class = "next" href="JanWeek3.html">❯</a>
+    <li style="text-align:center">
+      January, Week 2<br>
+      <span style="font-size:18px">2016</span>
+    </li>
+  </ul>
+</div>
+    
+    
+<table>
+        <tr>
+    <th></th>
+    <th>Monday, January 8</th>
+    <th>Tuesday, January 9</th>
+    <th>Wendesday, January 10</th>
+    <th>Thursday, January 11</th>
+    <th>Friday, January 12</th>
+    <th>Saturday, January 13</th>
+    <th>Sunday, January 14</th>
+  </tr>
+        <tr>
+    <th>00:00</th>
+    <th id="176"></th>
+    <th id="177"></th>
+    <th id="178"></th>
+    <th id="179"></th>
+    <th id="180"></th>
+    <th id="181"></th>
+    <th id="182"></th>
+  </tr>
+        
+        <tr>
+    <th>01:00</th>
+    <th id="183"></th>
+    <th id="184"></th>
+    <th id="185"></th>
+    <th id="186"></th>
+    <th id="187"></th>
+    <th id="188"></th>
+    <th id="189"></th>
+  </tr>
+        
+        <tr>
+    <th>02:00</th>
+    <th id="190"></th>
+    <th id="191"></th>
+    <th id="192"></th>
+    <th id="193"></th>
+    <th id="194"></th>
+    <th id="195"></th>
+    <th id="196"></th>
+  </tr>
+        
+        <tr>
+    <th>03:00</th>
+    <th id="197"></th>
+    <th id="198"></th>
+    <th id="199"></th>
+    <th id="200"></th>
+    <th id="201"></th>
+    <th id="202"></th>
+    <th id="203"></th>
+  </tr>
+        
+        <tr>
+    <th>04:00</th>
+    <th id="204"></th>
+    <th id="205"></th>
+    <th id="206"></th>
+    <th id="207"></th>
+    <th id="208"></th>
+    <th id="209"></th>
+    <th id="210"></th>
+  </tr>
+        
+        <tr>
+    <th>05:00</th>
+    <th id="211"></th>
+    <th id="212"></th>
+    <th id="213"></th>
+    <th id="214"></th>
+    <th id="215"></th>
+    <th id="216"></th>
+    <th id="217"></th>
+  </tr>
+        
+        <tr>
+    <th>06:00</th>
+    <th id="218"></th>
+    <th id="219"></th>
+    <th id="220"></th>
+    <th id="221"></th>
+    <th id="222"></th>
+    <th id="223"></th>
+    <th id="224"></th>
+  </tr>
+        
+        <tr>
+    <th>07:00</th>
+    <th id="225"></th>
+    <th id="226"></th>
+    <th id="227"></th>
+    <th id="228"></th>
+    <th id="229"></th>
+    <th id="230"></th>
+    <th id="231"></th>
+  </tr>
+        
+        <tr>
+    <th>08:00</th>
+    <th id="232"></th>
+    <th id="233"></th>
+    <th id="234"></th>
+    <th id="235"></th>
+    <th id="236"></th>
+    <th id="237"></th>
+    <th id="238"></th>
+  </tr>
+        
+        <tr>
+    <th>09:00</th>
+    <th id="239"></th>
+    <th id="240"></th>
+    <th id="241"></th>
+    <th id="242"></th>
+    <th id="243"></th>
+    <th id="244"></th>
+    <th id="245"></th>
+  </tr>
+        
+        <tr>
+    <th>10:00</th>
+    <th id="246"></th>
+    <th id="247"></th>
+    <th id="248"></th>
+    <th id="249"></th>
+    <th id="250"></th>
+    <th id="251"></th>
+    <th id="252"></th>
+  </tr>
+        
+        <tr>
+    <th>11:00</th>
+    <th id="253"></th>
+    <th id="254"></th>
+    <th id="255"></th>
+    <th id="256"></th>
+    <th id="257"></th>
+    <th id="258"></th>
+    <th id="259"></th>
+  </tr>
+        
+        <tr>
+    <th>12:00</th>
+    <th id="260"></th>
+    <th id="261"></th>
+    <th id="262"></th>
+    <th id="263"></th>
+    <th id="264"></th>
+    <th id="265"></th>
+    <th id="266"></th>
+  </tr>
+        
+        <tr>
+    <th>13:00</th>
+    <th id="267"></th>
+    <th id="268"></th>
+    <th id="269"></th>
+    <th id="270"></th>
+    <th id="271"></th>
+    <th id="272"></th>
+    <th id="273"></th>
+  </tr>
+        
+        <tr>
+    <th>14:00</th>
+    <th id="274"></th>
+    <th id="275"></th>
+    <th id="276"></th>
+    <th id="277"></th>
+    <th id="278"></th>
+    <th id="279"></th>
+    <th id="280"></th>
+  </tr>
+        
+        <tr>
+    <th>15:00</th>
+    <th id="281"></th>
+    <th id="282"></th>
+    <th id="283"></th>
+    <th id="284"></th>
+    <th id="285"></th>
+    <th id="286"></th>
+    <th id="287"></th>
+  </tr>
+        
+        <tr>
+    <th>16:00</th>
+    <th id="288"></th>
+    <th id="289"></th>
+    <th id="290"></th>
+    <th id="291"></th>
+    <th id="292"></th>
+    <th id="293"></th>
+    <th id="294"></th>
+  </tr>
+        
+        <tr>
+    <th>17:00</th>
+    <th id="295"></th>
+    <th id="296"></th>
+    <th id="297"></th>
+    <th id="298"></th>
+    <th id="299"></th>
+    <th id="300"></th>
+    <th id="301"></th>
+  </tr>
+        
+        <tr>
+    <th>18:00</th>
+    <th id="302"></th>
+    <th id="303"></th>
+    <th id="304"></th>
+    <th id="305"></th>
+    <th id="306"></th>
+    <th id="307"></th>
+    <th id="308"></th>
+  </tr>
+        
+        <tr>
+    <th>19:00</th>
+    <th id="309"></th>
+    <th id="310"></th>
+    <th id="311"></th>
+    <th id="312"></th>
+    <th id="313"></th>
+    <th id="314"></th>
+    <th id="315"></th>
+  </tr>
+        
+        <tr>
+    <th>20:00</th>
+    <th id="316"></th>
+    <th id="317"></th>
+    <th id="318"></th>
+    <th id="319"></th>
+    <th id="320"></th>
+    <th id="321"></th>
+    <th id="322"></th>
+  </tr>
+        
+        <tr>
+    <th>21:00</th>
+    <th id="323"></th>
+    <th id="324"></th>
+    <th id="325"></th>
+    <th id="326"></th>
+    <th id="327"></th>
+    <th id="328"></th>
+    <th id="329"></th>
+  </tr>
+        
+        <tr>
+    <th>22:00</th>
+    <th id="330"></th>
+    <th id="331"></th>
+    <th id="332"></th>
+    <th id="333"></th>
+    <th id="334"></th>
+    <th id="335"></th>
+    <th id="336"></th>
+  </tr>
+        
+        <tr>
+    <th>23:00</th>
+    <th id="337"></th>
+    <th id="338"></th>
+    <th id="339"></th>
+    <th id="340"></th>
+    <th id="341"></th>
+    <th id="342"></th>
+    <th id="343"></th>
+  </tr>
+        
+        <tr>
+    <th>24:00</th>
+    <th id="344"></th>
+    <th id="345"></th>
+    <th id="346"></th>
+    <th id="347"></th>
+    <th id="348"></th>
+    <th id="349"></th>
+    <th id="350"></th>
+  </tr>
+    </table>
+      
+        
+
+
+</body>
+</html>
