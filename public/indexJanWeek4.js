@@ -15,7 +15,7 @@ var cancel_button = document.getElementsByClassName("modal-cancel-button");
 var close_button = document.getElementsByClassName("modal-close-button");
 
 
-var aw_button = document.getElementsByClassName("modal-accept-button");
+var aw_button4 = document.getElementsByClassName("accept4");
 
 
 
@@ -37,21 +37,23 @@ function closeadd() {
 }
 
 
-aw_button[0].addEventListener("click",validation);
+aw_button4[0].addEventListener("click",validation4);
+
 
 
 //aw_button[0].addEventListener("click",create_todo);
 close_button[0].addEventListener("click",closeadd);
 cancel_button[0].addEventListener("click",closeadd);
 
-function create_todo() {
+
+function create_todo4() {
     var input_details = document.getElementById("todo-input-details").value;
     var time = document.getElementById("time").selectedIndex;
     var date = document.getElementById("days").selectedIndex;
     var num1 = parseInt(time);
     num1 = num1*7;
     var num2 = parseInt(date);
-    var temp = num1+num2+1;
+    var temp = num1+num2+525;
     //alert(temp);
     var temp2 = temp.toString();
     var temp3 = document.getElementById(temp2);
@@ -60,6 +62,9 @@ function create_todo() {
     closeadd();
 }
 
+    
+
+	
 
 for(i=0;i<remove.length;i++)
 {
@@ -70,7 +75,7 @@ function delete_todo(event){
 	event.currentTarget.parentNode.parentNode.removeChild(event.currentTarget.parentNode);
 }
 
-function validation(){
+function validation4(){
 
 	var what_box = document.getElementById('todo-input-details');
 
@@ -78,7 +83,7 @@ function validation(){
 		alert("The To do box cannot be empty!!!")
 		return false;
 	} else {
-		return create_todo();
+		return create_todo4();
 	}
 
 }

@@ -3,56 +3,11 @@ body {
   margin: 0;
 }
 
-a {
-  text-decoration: none;
-}
-
-header {
-  background-color: yellow;
-  padding: 5px 20px 0 5px;
-}
-
-header h1 {
-  display: inline-block;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 72px;
-  font-weight: 200;
-  margin: 5px 20px;
-}
-
-header h1 a {
-  color: inherit;
-}
-
-header h1 a:hover {
-  text-decoration: none;
-}
-
-nav {
-  background-color: #333;
-  color: white;
-  margin: 0 -20px;  /* negative margin here makes up for header padding */
-  font-size: 28px;
-  font-weight: 200;
-}
 
 
 
 
 
-.todo .dismiss-button {
-  font-family: sans-serif;
-  position: absolute;
-  top: 0;
-  right: 10px;
-  font-size: 30px;
-  display: none;
-  cursor: pointer;
-}
-
-.todo:hover .dismiss-button {
-  display: initial;
-}
 
 .add-note-button-container {
   position: fixed;
@@ -225,6 +180,28 @@ footer .copyright {
   color: red;
 }
 
+
+.error-container {
+  flex: 1 100%;
+  text-align: center;
+}
+
+.error-container h2,
+.error-container h3 {
+  margin: 0;
+  font-weight: lighter;
+}
+
+.error-container h2 {
+  font-size: 96px;
+}
+
+.error-container h3 {
+  font-size: 32px;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------*/
+
 .modal-footer {
   display: flex;
   justify-content: flex-end;
@@ -255,21 +232,130 @@ footer .copyright {
   background-color: #5481e4;
 }
 
-.error-container {
-  flex: 1 100%;
-  text-align: center;
+/*-----------------------------------------------------------------------------------------------------------------*/
+
+.modal-footer2 {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 10px 20px 10px;
 }
 
-.error-container h2,
-.error-container h3 {
-  margin: 0;
-  font-weight: lighter;
+.modal-footer2 button {
+  font-size: 20px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 20px;
+  cursor: pointer;
 }
 
-.error-container h2 {
-  font-size: 96px;
+.modal-footer2 .modal-cancel-button:hover {
+  background-color: #eee;
 }
 
-.error-container h3 {
-  font-size: 32px;
+.modal-footer2 .accept2 {
+  background-color: #2464f5;
+  color: #fff;
+}
+
+.modal-footer2 .accept2:hover {
+  background-color: #5481e4;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------*/
+
+.modal-footer3 {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 10px 20px 10px;
+}
+
+.modal-footer3 button {
+  font-size: 20px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.modal-footer3 .modal-cancel-button:hover {
+  background-color: #eee;
+}
+
+.modal-footer3 .accept3 {
+  background-color: #2464f5;
+  color: #fff;
+}
+
+.modal-footer3 .accept3:hover {
+  background-color: #5481e4;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------*/
+
+.modal-footer4 {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 10px 20px 10px;
+}
+
+.modal-footer4 button {
+  font-size: 20px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.modal-footer4 .modal-cancel-button:hover {
+  background-color: #eee;
+}
+
+.modal-footer4 .accept4 {
+  background-color: #2464f5;
+  color: #fff;
+}
+
+.modal-footer4 .accept4:hover {
+  background-color: #5481e4;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------*/
+
+.modal-footer5 {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 10px 20px 10px;
+}
+
+.modal-footer5 button {
+  font-size: 20px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.modal-footer5 .modal-cancel-button:hover {
+  background-color: #eee;
+}
+
+.modal-footer5 .accept5 {
+  background-color: #2464f5;
+  color: #fff;
+}
+
+.modal-footer5 .accept5:hover {
+  background-color: #5481e4;
 }
