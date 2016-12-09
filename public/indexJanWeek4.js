@@ -87,3 +87,26 @@ function validation4(){
 	}
 
 }
+
+
+// -----------------------------------------------------------------------------------------------------------
+
+var delete_button = document.getElementsByClassName("modal-delete-button")
+
+delete_button[0].addEventListener("click",delete_todo);
+
+function delete_todo() {
+    var input_details = " ";
+    var time = document.getElementById("time").selectedIndex;
+    var date = document.getElementById("days").selectedIndex;
+    var num1 = parseInt(time);
+    num1 = num1*7;
+    var num2 = parseInt(date);
+    var temp = num1+num2+525;
+    //alert(temp);
+    var temp2 = temp.toString();
+    var temp3 = document.getElementById(temp2);
+    temp3.innerHTML = input_details;
+    
+    closeadd();
+}

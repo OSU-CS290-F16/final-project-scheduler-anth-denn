@@ -219,6 +219,10 @@ footer .copyright {
   cursor: pointer;
 }
 
+.modal-footer .modal-delete-button:hover {
+  background-color: #eee;
+}
+
 .modal-footer .modal-cancel-button:hover {
   background-color: #eee;
 }
